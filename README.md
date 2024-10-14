@@ -72,21 +72,10 @@ JWT_SECRET=your_jwt_secret
 npm run dev
 ```
 
-Your app should now be running at `http://localhost:3000` for the frontend and `http://localhost:5000` for the backend.
+Your app should now be running at `http://localhost:3000`.
 
 ---
 
-## 🖼️ **Screenshots**
-
-📷 **Home Page**
-
-![Home Page](https://via.placeholder.com/800x400?text=Home+Page+Screenshot)
-
-📷 **Product Page**
-
-![Product Page](https://via.placeholder.com/800x400?text=Product+Page+Screenshot)
-
----
 
 ## 🌟 **Future Enhancements**
 
