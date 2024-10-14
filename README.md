@@ -53,7 +53,7 @@ npm install
 ### 4️⃣ **Navigate to the Client Directory & Install Frontend Dependencies**
 
 ```bash
-cd client
+cd frontend
 npm install
 ```
 
@@ -69,7 +69,7 @@ JWT_SECRET=your_jwt_secret
 ### 6️⃣ **Run the Application**
 
 ```bash
-npm run dev
+npm start
 ```
 
 Your app should now be running at `http://localhost:3000`.
