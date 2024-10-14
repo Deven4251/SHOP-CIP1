@@ -1,0 +1,280 @@
+.a1 {
+	border-radius: 5px;
+}
+
+.q1 {
+	width: 400px;
+	float: left;
+}
+
+.div1 {
+	width: 500px;
+}
+
+.div2 {
+	width: 100%;
+}
+
+.r1 {
+	font-size: 40px;
+	background-color: rgba(255, 0, 134, 0.5);
+	color: aqua;
+	position: relative;
+	left: 300px;
+	top: 300px;
+	border-radius: 90px;
+}
+
+.pic1 {
+	width: 40px;
+	height: auto;
+	border-radius: 25px;
+}
+
+.hr1 {
+	width: 100%;
+	height: auto;
+
+}
+
+.pic3 {
+	border-radius: 100%;
+	width: 100px;
+}
+
+.pic4 {
+	width: 100px;
+	border-radius: 70px;
+}
+
+.padd {
+	padding: 250px;
+}
+
+.inp {
+	width: 500px;
+}
+
+.a2 {
+	width: 600px;
+	margin-left: 450px;
+	margin-top: 80px;
+	padding: 50px;
+	border-radius: 35px;
+}
+
+.anchr {
+	text-decoration: none;
+
+}
+
+.anchr:hover {
+	color: red;
+
+}
+
+.input[type=text] {
+	float: right;
+	padding: 6px;
+	border: none;
+	margin-top: 8px;
+	margin-right: 16px;
+	font-size: 17px;
+}
+
+
+@media screen and (max-width: 600px) {
+
+
+	.input[type=text] {
+		float: none;
+		display: block;
+		text-align: left;
+		width: 100%;
+		margin: 0;
+		padding: 14px;
+	}
+
+	.input[type=text] {
+		border: 1px solid #ccc;
+	}
+}
+
+.srch {
+	margin: 10px;
+	height: 33px;
+	background-color: blue;
+}
+
+.fntsze {
+	font-size: 20px;
+}
+
+/* styling of about page  */
+.about-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: #f7f7f7;
+}
+
+.about-content {
+	background-color: #ffffff;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+	text-align: center;
+}
+
+.about-content h2 {
+	margin-bottom: 10px;
+}
+
+/* CSS transition for smooth fade-in animation */
+.about-container-enter {
+	opacity: 0;
+}
+
+.about-container-enter-active {
+	opacity: 1;
+	transition: opacity 500ms;
+}
+
+.card {
+	margin: 5px;
+	border: none;
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+	transition: transform 0.2s;
+}
+
+.card:hover {
+	transform: translateY(-5px);
+}
+
+.dropbtn {
+	background-color: navy;
+	color: white;
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+
+.dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown-content a:hover {
+	background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+
+.dropdown:hover .dropbtn {
+	background-color: black;
+}
+
+/* LOGIN LINK CUSTOMIZATION VIA CSS*/
+.LOGIN {
+	text-decoration: none;
+	color: red;
+}
+
+.LOGIN:hover {
+	color: black;
+	font-size: larger;
+	font-family: algerian;
+}
+
+.LOGIN1 {
+	text-decoration: none;
+	color: black;
+}
+
+.LOGIN1:hover {
+	color: yellow;
+	font-size: larger;
+	font-family: sans-serif;
+}
+
+.marquee1 {
+	color: red;
+}
+
+.blink {
+	animation: blinker 1.5s linear infinite;
+	color: blue;
+	font-family: sans-serif;
+}
+
+@keyframes blinker {
+	50% {
+		opacity: 0;
+	}
+}
+.blink1 {
+	animation: blinker 1.5s linear infinite;
+	color: red;
+	font-family: 'Times New Roman', Times, serif;
+	text-decoration: none;
+}
+
+@keyframes blinker {
+	50% {
+		opacity: 0.6;
+	}
+}
+.p1{
+	text-decoration: none;
+}
+
+.blink2 {
+	animation: blinker 1.5s linear infinite;
+	font-family: 'Times New Roman', Times, serif;
+	font-weight: bolder;
+}
+
+@keyframes blinker {
+	50% {
+		opacity: 0.7;
+	}
+}
+.h4{
+	color: blue;
+}
+.h4:hover{
+	color: red;
+	font-weight: bolder;
+}
+
+.p1{
+	color: rgba(0, 56, 0, 0.7);
+	
+	/*text-decoration: dotted;*/
+	/*transform: rotateX('75');
+	transform: rotateY('15');*/
+
+
+}
