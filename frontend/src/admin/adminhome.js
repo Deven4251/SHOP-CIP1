@@ -6,14 +6,14 @@ import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 
 const Adminhome = () => {
-	
+
 	const [un, setun] = useState("Admin");
 	const [odata, setodata] = useState([]);
 	const [odetails, setodetails] = useState([]);
-	
+
 	const jump = useNavigate();
 	const [cookie, setcookie, removecookie] = useCookies();
-	
+
 	useEffect(() => {
 		if (cookie["cookiesdata"]) {
 			getprofile();
@@ -25,7 +25,7 @@ const Adminhome = () => {
 	}, [])
 
 	const loaddetails = async (x) => {
-		const rec = await fetch("http://localhost:7000/orderdetails/" + x, {
+		const rec = await fetch("https://shop-cip1-5.onrender.com/orderdetails/" + x, {
 			method: "GET",
 			headers: { "Content-Type": "application/json" }
 		})
@@ -34,7 +34,7 @@ const Adminhome = () => {
 	}
 
 	const loadorder = async () => {
-		const rec = await fetch("http://localhost:7000/proorder", {
+		const rec = await fetch("https://shop-cip1-5.onrender.com/proorder", {
 			method: "GET",
 			headers: { "Content-Type": "application/json" }
 		})
@@ -43,7 +43,7 @@ const Adminhome = () => {
 	}
 
 	const getprofile = async () => {
-		const rec = await fetch("http://localhost:7000/profile", {
+		const rec = await fetch("https://shop-cip1-5.onrender.com/profile", {
 			headers: { "Content-Type": "application/json" },
 			method: "GET",
 			credentials: "include"
@@ -116,7 +116,7 @@ const Adminhome = () => {
 												<td>{x.pname}</td>
 												<td>{x.price}</td>
 												<td>{x.qty}</td>
-												<td><img style={{ width: "70px" }} src={"http://localhost:7000/" + x.pic} /></td>
+												<td><img style={{ width: "70px" }} src={"https://shop-cip1-5.onrender.com/" + x.pic} /></td>
 											</tr>
 										)
 									})}

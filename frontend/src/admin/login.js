@@ -9,14 +9,14 @@ const Login=()=>{
         setfrm({...frm,[e.target.id]:e.target.value})
     }
     const validate=async()=>{
-        const rec=await fetch("http://localhost:7000/login",{
+        const rec=await fetch("https://shop-cip1-5.onrender.com/login",{
             method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify({uname:frm.txtuname,psw:frm.txtpsw}),
             credentials:"include"
         });
         const data=await rec.json();
-		
+
         if(data.msg==="Valid Users")
         {
             jmp("/dashboard");
@@ -44,7 +44,7 @@ const Login=()=>{
                         </div>
                         <div className="form-group"><br/>
                             <button type="button" onClick={validate} className="btn btn-dark text-light mb-2">Login</button>
-                            
+
                         </div>
 
                     </div>

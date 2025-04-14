@@ -11,7 +11,7 @@ const Category=()=>{
         setfrm({...frm,[e.target.id]:e.target.value});
     }
     const updaterecord=async()=>{
-        const rec=await fetch("http://localhost:7000/category",{
+        const rec=await fetch("https://shop-cip1-5.onrender.com/category",{
             method:"PUT",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify({cid:frm.editcid,catname:frm.edtcatname})
@@ -23,7 +23,7 @@ const Category=()=>{
     const deleterecord=async(x)=>{
         if(window.confirm("Want to Delete"))
         {
-            const rec=await fetch("http://localhost:7000/category",{
+            const rec=await fetch("https://shop-cip1-5.onrender.com/category",{
             method:"DELETE",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify({cid:x})
@@ -34,7 +34,7 @@ const Category=()=>{
         }
     }
     const loadsinglerecord=async(x)=>{
-        const rec=await fetch("http://localhost:7000/category/"+x,{
+        const rec=await fetch("https://shop-cip1-5.onrender.com/category/"+x,{
             method:"GET",
             headers:{"Content-Type":"application/json"}
         });
@@ -42,7 +42,7 @@ const Category=()=>{
         setfrm({...frm,edtcatname:data.catname,editcid:x});
     }
     const loadrecord=async()=>{
-        const rec=await fetch("http://localhost:7000/category",{
+        const rec=await fetch("https://shop-cip1-5.onrender.com/category",{
             method:"GET",
             headers:{"Content-Type":"application/json"}
         });
@@ -55,7 +55,7 @@ const Category=()=>{
             alert("Please enter category name");
         }
         else{
-            const rec=await fetch("http://localhost:7000/category",{
+            const rec=await fetch("https://shop-cip1-5.onrender.com/category",{
                 method:"POST",
                 headers:{"Content-Type":"application/json"},
                 body:JSON.stringify({catname:frm.txtcatname})

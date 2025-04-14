@@ -9,7 +9,7 @@ function App() {
 	}, [])
 
 	const loadcart = async () => {
-		const rec = await fetch("http://localhost:7000/cart", {
+		const rec = await fetch("https://shop-cip1-5.onrender.com/cart", {
 			method: "GET",
 			headers: { "Content-Type": "application/json" },
 			credentials: "include"
@@ -31,7 +31,7 @@ function App() {
 				<div className="carousel-inner">
 					<div className="carousel-item active">
 						<img src="images/b1.jpg" alt="Los Angeles" className="d-block w-100" />
-						
+
 					</div>
 
 					<div className="carousel-item">

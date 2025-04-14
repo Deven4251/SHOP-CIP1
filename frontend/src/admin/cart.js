@@ -28,7 +28,7 @@ const Cart = () => {
 		else if (frm.txtmobile.trim() === "") {
 			alert("Please enter mobile");
 		}
-		else if (frm.txtaddress.trim() === "") {	
+		else if (frm.txtaddress.trim() === "") {
 			alert("Please enter address");
 		}
 		else if (total === 0) {
@@ -36,7 +36,7 @@ const Cart = () => {
 		}
 		else {
 
-			const rec = await fetch("http://localhost:7000/proorder", {
+			const rec = await fetch("https://shop-cip1-5.onrender.com/proorder", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ name: frm.txtname, mobile: frm.txtmobile, address: frm.txtaddress, paymentmode: frm.txtpmode, amount: total }),
@@ -50,7 +50,7 @@ const Cart = () => {
 	}
 
 	const loadcart = async () => {
-		const rec = await fetch("http://localhost:7000/cart", {
+		const rec = await fetch("https://shop-cip1-5.onrender.com/cart", {
 			method: "GET",
 			headers: { "Content-Type": "application/json" },
 			credentials: "include"
@@ -71,7 +71,7 @@ const Cart = () => {
 
 
 	const updatecart = async (x, y, z) => {
-		const rec = await fetch("http://localhost:7000/cart", {
+		const rec = await fetch("https://shop-cip1-5.onrender.com/cart", {
 			method: "PUT",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({ cid: x, opr: y, qty: z })
@@ -128,7 +128,7 @@ const Cart = () => {
 												<td>{x.pname}</td>
 												<td style={{ color: "red" }}>₹ <del>{x.price}</del></td>
 												<td>₹ {x.offer}</td>
-												<td><img src={"http://localhost:7000/" + x.pic} style={{ width: "70px", height: "70px" }} /></td>
+												<td><img src={"https://shop-cip1-5.onrender.com/" + x.pic} style={{ width: "70px", height: "70px" }} /></td>
 												<td><button className="bg-success text-light" onClick={() => { updatecart(x._id, "plus", x.qty) }}>+</button>&nbsp;{x.qty}&nbsp;<button className="bg-danger text-light" onClick={() => { updatecart(x._id, "minus", x.qty) }}>-</button></td>
 											</tr>
 										)

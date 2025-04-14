@@ -17,7 +17,7 @@ const Adminproduct = () => {
 		setfiledata(e.target.files[0])
 	}
 	const updaterecord = async () => {
-		const rec = await fetch("http://localhost:7000/category", {
+		const rec = await fetch("https://shop-cip1-5.onrender.com/category", {
 			method: "PUT",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({ cid: frm.editcid, catname: frm.edtcatname })
@@ -28,7 +28,7 @@ const Adminproduct = () => {
 	}
 	const deleterecord = async (x) => {
 		if (window.confirm("Want to Delete")) {
-			const rec = await fetch("http://localhost:7000/category", {
+			const rec = await fetch("https://shop-cip1-5.onrender.com/category", {
 				method: "DELETE",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ cid: x })
@@ -39,7 +39,7 @@ const Adminproduct = () => {
 		}
 	}
 	const loadsinglerecord = async (x) => {
-		const rec = await fetch("http://localhost:7000/category/" + x, {
+		const rec = await fetch("https://shop-cip1-5.onrender.com/category/" + x, {
 			method: "GET",
 			headers: { "Content-Type": "application/json" }
 		});
@@ -47,7 +47,7 @@ const Adminproduct = () => {
 		setfrm({ ...frm, edtcatname: data.catname, editcid: x });
 	}
 	const loadcategory = async () => {
-		const rec = await fetch("http://localhost:7000/category", {
+		const rec = await fetch("https://shop-cip1-5.onrender.com/category", {
 			method: "GET",
 			headers: { "Content-Type": "application/json" }
 		});
@@ -55,7 +55,7 @@ const Adminproduct = () => {
 		setcatdata(data);
 	}
 	const loadrecord = async () => {
-		const rec = await fetch("http://localhost:7000/adminproduct", {
+		const rec = await fetch("https://shop-cip1-5.onrender.com/adminproduct", {
 			method: "GET",
 			headers: { "Content-Type": "application/json" }
 		});
@@ -83,7 +83,7 @@ const Adminproduct = () => {
 			fdata.append("offerprice", frm.txtofferprice);
 			fdata.append("description", frm.txtdesc);
 			fdata.append("pro_pic", fileData);
-			const rec = await fetch("http://localhost:7000/adminproduct", {
+			const rec = await fetch("https://shop-cip1-5.onrender.com/adminproduct", {
 				method: "POST",
 				body: fdata
 			});
@@ -120,7 +120,7 @@ const Adminproduct = () => {
 								{cdata.map((x) => {
 									return (
 										<tr>
-											<td><img src={"http://localhost:7000/" + x.pic} style={{ width: "70px" }} /></td>
+											<td><img src={"https://shop-cip1-5.onrender.com/" + x.pic} style={{ width: "70px" }} /></td>
 											<td>{x.pname}</td>
 											<td>{x.price}</td>
 											<td>{x.offerprice}</td>

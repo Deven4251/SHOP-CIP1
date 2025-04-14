@@ -28,7 +28,7 @@ const USignup = () => {
 			alert("Both password must be same");
 		}
 		else {
-			const rec = await fetch("http://localhost:7000/signup", {
+			const rec = await fetch("https://shop-cip1-5.onrender.com/signup", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ name: frm.txtname, mobile: frm.txtmobile, email: frm.txtemail, password: frm.txtpassword })
