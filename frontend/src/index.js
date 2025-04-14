@@ -4,7 +4,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import About from './about';
-import Contact from './contact';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Product from './product';
 import AdminHome from './admin/adminhome';
@@ -22,10 +21,8 @@ root.render(
 			<Routes>
 				<Route exact path='/' element={<App />} />
 				<Route exact path='/about' element={<About />} />
-				<Route exact path='/contact' element={<Contact />} />
 				<Route exact path='/product' element={<Product />} />
 				<Route exact path='/product/:id' element={<Product />} />
-
 				<Route exact path='/ulogin' element={<ULogin />} />
 				<Route exact path='/usignup' element={<USignup />} />
 				<Route exact path='/cart' element={<Cart />} />
@@ -33,7 +30,6 @@ root.render(
 				<Route exact path='/dashboard' element={<AdminHome />} />
 				<Route exact path='/category' element={<Category />} />
 				<Route exact path='/adminproduct' element={<Adminproduct />} />
-			
 			</Routes>
 		</BrowserRouter>
 	</React.StrictMode>

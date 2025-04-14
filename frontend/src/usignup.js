@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import './style.css'
+import './style.css';
 
 const USignup = () => {
 	const [frm, setfrm] = useState({ "txtname": "", "txtmobile": "", "txtemail": "", "txtpassword": "", "txtcpassword": "" });
@@ -24,7 +24,7 @@ const USignup = () => {
 		else if (frm.txtcpassword.trim() === "") {
 			alert("Please enter confirm password");
 		}
-		else if (frm.txtpassword.trim() != frm.txtcpassword) {
+		else if (frm.txtpassword.trim() !== frm.txtcpassword) {
 			alert("Both password must be same");
 		}
 		else {
@@ -81,7 +81,7 @@ const USignup = () => {
 						</div>
 					</div>
 					<br />
-					
+
 					<br />
 					<button className="btn btn-info">
 						<Link to="/ulogin" className="LOGIN">ALREADY A CUSTOMER, LOGIN HERE</Link></button>
