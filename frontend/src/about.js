@@ -16,89 +16,79 @@ const About = () => {
 	return (
 		<>
 		<Header/>
-		<div>
-			<marquee behavior="scroll" direction="up" scrollamount="3" className="marquee1 text-center blink">
-			
-			<img src="./images/logo.png" className="pic4" alt="#"/>
-			<img src="./images/logo.png" className="pic4" alt="#"/>
-			<img src="./images/logo.png" className="pic4" alt="#"/>
-			<img src="./images/logo.png" className="pic4" alt="#"/>
-			<img src="./images/logo.png" className="pic4" alt="#"/>
-			<img src="./images/logo.png" className="pic4" alt="#"/>
-			<img src="./images/logo.png" className="pic4" alt="#"/>
-			<img src="./images/logo.png" className="pic4" alt="#"/>
-			<img src="./images/logo.png" className="pic4" alt="#"/>
-			<img src="./images/logo.png" className="pic4" alt="#"/>
-			<img src="./images/logo.png" className="pic4" alt="#"/>
-			<img src="./images/logo.png" className="pic4" alt="#"/>
-			<img src="./images/logo.png" className="pic4" alt="#"/>
-			<img src="./images/logo.png" className="pic4" alt="#"/>
-			</marquee>
+		<div className="container mt-5">
+			<div className="row">
+				<div className="col-md-12 mb-5">
+					<div className="card bg-dark text-light p-5">
+						<h1 className="display-4 text-center mb-4">About Our Platform</h1>
+						<p className="lead text-center mb-5">
+							Your premier destination for seamless online shopping
+						</p>
+
+						<div className="row mt-4">
+							<div className="col-md-6">
+								<div className="card bg-secondary text-light p-4 mb-4">
+									<h3 className="text-primary mb-3">What We Offer</h3>
+									<ul className="list-unstyled">
+										<li className="mb-3">
+											<h5 className="text-light">Extensive Product Range</h5>
+											<p>Browse through our carefully curated selection of high-quality products across various categories.</p>
+										</li>
+										<li className="mb-3">
+											<h5 className="text-light">Secure Shopping</h5>
+											<p>Shop with confidence using our secure payment gateway and data protection measures.</p>
+										</li>
+										<li className="mb-3">
+											<h5 className="text-light">User-Friendly Interface</h5>
+											<p>Enjoy a smooth shopping experience with our intuitive and responsive design.</p>
+										</li>
+									</ul>
+								</div>
+							</div>
+
+							<div className="col-md-6">
+								<div className="card bg-secondary text-light p-4 mb-4">
+									<h3 className="text-primary mb-3">Key Features</h3>
+									<ul className="list-unstyled">
+										<li className="mb-3">
+											<h5 className="text-light">Smart Search</h5>
+											<p>Find exactly what you're looking for with our advanced search functionality.</p>
+										</li>
+										<li className="mb-3">
+											<h5 className="text-light">Real-time Updates</h5>
+											<p>Stay informed with instant notifications about your orders and promotions.</p>
+										</li>
+										<li className="mb-3">
+											<h5 className="text-light">Customer Support</h5>
+											<p>Access our dedicated support team for any assistance you may need.</p>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div className="row mt-4">
+							<div className="col-md-12">
+								<div className="card bg-secondary text-light p-4">
+									<h3 className="text-primary mb-3">Our Commitment</h3>
+									<p className="lead">
+										We are committed to providing an exceptional shopping experience by:
+									</p>
+									<ul className="list-unstyled">
+										<li className="mb-2">• Ensuring product quality and authenticity</li>
+										<li className="mb-2">• Maintaining competitive pricing</li>
+										<li className="mb-2">• Offering reliable delivery services</li>
+										<li className="mb-2">• Providing excellent customer service</li>
+										<li className="mb-2">• Continuously improving our platform</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-		<div className="container">
-		<div className="row">
-		<div className="col-md-4"><div className="about-container ">
-				<div className="about-content bg-info">
-					<h1><span className="text-danger">I</span>nfo <span className="text-warning"></span></h1>
-					<div className="card-deck">
-						{developers.map((developer, index) => (
-							<div className="card" key={index}>
-								<div className="card-body">
-								<h3 className="text-danger">Name:</h3>
-									<h4 className="card-title">{developer.name}</h4>
-									<p className="card-text">{developer.hobbies}</p>
-									<a>
-									<button className="btn btn-warning">Know More</button>
-									</a>
-								</div>
-							</div>
-						))}
-					</div>
-				</div>
-			</div></div>
-		<div className="col-md-4"><div className="about-container ">
-				<div className="about-content bg-info">
-					<h1><span className="text-danger">P</span>hone <span className="text-warning">N</span>o</h1>
-					<div className="card-deck">
-						{developers.map((developer, index) => (
-							<div className="card" key={index}>
-								<div className="card-body">
-									
-									<h3 className="card-text">{developer.contact}</h3>
-									<a href={`callto:${developer.contact}`} className="btn btn-warning">
-										Call
-									</a>
-									
-									
-								</div>
-							</div>
-						))}
-					</div>
-				</div>
-			</div></div>
-		<div className="col-md-4"><div className="about-container ">
-				<div className="about-content bg-info">
-					<h1><span className="text-danger">M</span>ail <span className="text-warning">T</span>0</h1>
-					<div className="card-deck">
-						{developers.map((developer, index) => (
-							<div className="card" key={index}>
-								<div className="card-body">
-								<p className="card-text fa fa-envelope"> devendramishra0204@gmail.com</p>
-								<br />
-									<a href={`mailto:${developer.email}`} className="btn btn-warning">
-										Contact
-									</a>
-								</div>
-							</div>
-						))}
-					</div>
-				</div>
-			</div></div>
-		
 		</div>
-			
-		</div>
-			<Footer/>
+		<Footer/>
 		</>
 	);
 };

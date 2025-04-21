@@ -9,13 +9,15 @@
 
 .txt1 {
 	font-size: 50px;
-	color: yellow;
+	color: var(--accent-color);
 	position: relative;
 	left: 590px;
 	top: 450px;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .mypic {
 	height: 200px;
 	width: 100%;
+	filter: brightness(0.8);
 }

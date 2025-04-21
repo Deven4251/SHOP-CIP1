@@ -4,120 +4,89 @@ import { Link, useNavigate } from 'react-router-dom';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { Cookies, useCookies } from 'react-cookie';
 
-const Header = (c) => {
-	const jump=useNavigate();
-	//const [cookie,setcookie,removecookie]=useCookies();
-	//function delrecord(){
-	//	if(cookie=="usercookie"){
-	//	removecookie("usercookie");
-    //    jump("/");
-	//}
-	//}
-	//const [srch, setsrch]=useState("");
-	//const fun1=(e)=>{
-	//	setsrch(e.target.value);
-	//}
+const Header = () => {
 	return (
-		<>
-			<div className="container-fluid bg-primary text-light">
-				<div className="row">
-
-					<div className="col-md-12 bg-dark">
-						<nav className="navbar navbar-expand-sm bg-dark navbar-dark">
-							<div className="container-fluid">
-								<a className="navbar-brand fntsze " href="#">
-									<img src='images/logo.png' className='pic4' /></a>
-								<button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-									<span className="navbar-toggler-icon"></span>
-								</button>
-								<div className="collapse navbar-collapse" id="collapsibleNavbar">
-									<ul className="navbar-nav">
-										<li className="nav-item">
-											<Link className="nav-link fntsze" to="/">Home</Link>
-										</li>
-										<li>
-										<input type='search' placeholder='search'/>
-										</li>
-										<li className="nav-item">
-											<Link className="nav-link fntsze" to="/about">About Us</Link>
-										</li>
-										<li className="nav-item dropdown fntsze">
-											<a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Our Products</a>
-											<ul class="dropdown-menu">
-												<li><Link className="dropdown-item fntsze" to="/product">Our Products</Link></li>
-												<li><a className="dropdown-item fntsze" href="#">Another link</a></li>
-												<li><a className="dropdown-item fntsze" href="#">A third link</a></li>
-											</ul>
-										</li>
-										<li className="nav-item ">
-											<Link className="nav-link fntsze" to="/contact">Contact</Link>
-										</li>
-									</ul>
-									<ul className="nav ms-auto">
-										<li><Link to="/cart"><img src="images/cart.jpeg" style={{ width: "40px" }} /><span class="badge bg-danger rounded-circle" style={{ position: "relative", left: "-25px", top: "-12px" }}>{c.citem}</span></Link></li>
-									</ul>
-									<ul>
-										<Dropdown>
-											<Dropdown.Toggle variant="warning" id="dropdown-center">
-												Account
-											</Dropdown.Toggle>
-
-											<Dropdown.Menu>
-												<Dropdown.Item href="/usignup">Signup/login</Dropdown.Item>
-												<Dropdown.Item>Logout</Dropdown.Item>
-											</Dropdown.Menu>
-										</Dropdown>
-									</ul>
-								</div>
-							</div>
-						</nav>
+		<header className="header">
+			<div className="container">
+				<div className="header-content">
+					<div className="logo">
+						<Link to="/">
+							<h1>ShopCip</h1>
+						</Link>
+					</div>
+					<div className="search-bar">
+						<input type="text" placeholder="Search for products..." />
+						<button><i className="fas fa-search"></i></button>
+					</div>
+					<nav className="main-nav">
+						<ul>
+							<li><Link to="/"><i className="fas fa-home"></i> Home</Link></li>
+							<li><Link to="/products"><i className="fas fa-shopping-bag"></i> Products</Link></li>
+							<li><Link to="/about"><i className="fas fa-info-circle"></i> About</Link></li>
+							<li><Link to="/contact"><i className="fas fa-envelope"></i> Contact</Link></li>
+						</ul>
+					</nav>
+					<div className="user-actions">
+						<Link to="/cart" className="cart-icon">
+							<i className="fas fa-shopping-cart"></i>
+							<span className="cart-count">0</span>
+						</Link>
+						<Link to="/wishlist" className="wishlist-icon">
+							<i className="fas fa-heart"></i>
+						</Link>
+						<Link to="/account" className="account-icon">
+							<i className="fas fa-user"></i>
+						</Link>
 					</div>
 				</div>
 			</div>
-		</>
-	)
-}
+		</header>
+	);
+};
 
 const Footer = () => {
 	return (
-		<>
-			<div className="bg-info">
+		<footer className="footer mt-5">
+			<div className="container-fluid">
+				<div className="row py-5">
+					<div className="col-md-4">
+						<h4 className="text-light mb-4">Quick Links</h4>
+						<ul className="list-unstyled">
+							<li className="mb-2"><a href="/" className="text-light text-decoration-none">Home</a></li>
+							<li className="mb-2"><a href="/about" className="text-light text-decoration-none">About Us</a></li>
+							<li className="mb-2"><a href="/product" className="text-light text-decoration-none">Products</a></li>
+							<li className="mb-2"><a href="/contact" className="text-light text-decoration-none">Contact</a></li>
+						</ul>
+					</div>
+					<div className="col-md-4">
+						<h4 className="text-light mb-4">Customer Service</h4>
+						<ul className="list-unstyled">
+							<li className="mb-2"><a href="#" className="text-light text-decoration-none">Shipping Policy</a></li>
+							<li className="mb-2"><a href="#" className="text-light text-decoration-none">Return Policy</a></li>
+							<li className="mb-2"><a href="#" className="text-light text-decoration-none">Privacy Policy</a></li>
+							<li className="mb-2"><a href="#" className="text-light text-decoration-none">Terms of Service</a></li>
+						</ul>
+					</div>
+					<div className="col-md-4">
+						<h4 className="text-light mb-4">Contact Info</h4>
+						<ul className="list-unstyled">
+							<li className="mb-2 text-light">Nh 24, Sitapur Road, Lucknow</li>
+							<li className="mb-2 text-light">+91 7398043147</li>
+							<li className="mb-2 text-light">devendramishra0204@gmail.com</li>
+						</ul>
+					</div>
+				</div>
 				<div className="row">
-					<div className="col-md-4 text-light text-center t2">
-					<h3 className='text-dark'>About</h3>
-						<p className="text-center" style={{fontSize:"25px"}}>
-							welcome to Footer section here u will be 
-							introduced to an amazing marvellous 
-							handsome hunk developer Named as: <a href="/about" className='p1'> DEVENDRA</a>
-						</p>
-						<div className="container">
-							<img src="./images/fb.png" className="pic1" alt="facebook"/>&nbsp;
-							<img src="images/twitter.png" className="pic1" alt="twitter" />&nbsp;
-							<img src="images/gmail.png" className="pic1" alt="gmail" />&nbsp;
-							<img src="images/linkedin.png" className="pic1" alt="gmail" />&nbsp;
+					<div className="col-12">
+						<div className="text-center py-3 border-top border-secondary">
+							<p className="text-light mb-0">&copy; {new Date().getFullYear()} Shop-Cip. All rights reserved.</p>
 						</div>
-
-					</div>
-					<div className="col-md-4 text-light text-center t2">
-						<h3 className='text-dark'>My account</h3>
-						<div><a href="/cart" className="p1" style={{fontSize:"25px"}}>Cart</a></div>
-						<div><a href="/ulogin"style={{fontSize:"25px"}} className="p1">Login</a></div>
-						<div><a href="usignup"  className="p1">Create Account</a></div>
-					</div>
-					
-					<div className="col-md-4 text-light t2">
-						<h3 className='text-dark'>Contacts</h3>
-						<p className="fa fa-map-marker ">&nbsp;Nh 24,Sitapur Road,Lucknow</p><br></br>
-						<p className="fa fa-phone"> +91 7398043147</p><br></br>
-						<p className="fa fa-envelope"> devendramishra0204@gmail.com</p>
 					</div>
 				</div>
 			</div>
-			<div className="container-fluid bg-dark text-light text-center p-4">
-				MADE BY:DEVENDRA
-			</div>
-		</>
-	)
-}
+		</footer>
+	);
+};
+
 export default Header
 export { Footer }

@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import About from './about';
+import Contact from './contact';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Product from './product';
 import AdminHome from './admin/adminhome';
@@ -13,14 +14,16 @@ import Adminproduct from './admin/adminproduct';
 import ULogin from './ulogin';
 import USignup from './usignup';
 import Cart from './admin/cart';
+import Home from './home';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 	<React.StrictMode>
 		<BrowserRouter>
 			<Routes>
-				<Route exact path='/' element={<App />} />
+				<Route exact path='/' element={<Home />} />
 				<Route exact path='/about' element={<About />} />
+				<Route exact path='/contact' element={<Contact />} />
 				<Route exact path='/product' element={<Product />} />
 				<Route exact path='/product/:id' element={<Product />} />
 				<Route exact path='/ulogin' element={<ULogin />} />
