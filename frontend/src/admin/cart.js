@@ -84,27 +84,7 @@ const Cart = () => {
 	return (
 		<>
 			<Header citem={citem} />
-			<div className="container-fluid">
-				<div>
-					<marquee behavior="scroll" direction="up" scrollamount="3" className="marquee1 text-center blink">
-
-						<img src="./images/logo.png" className="pic4" alt="#" />
-						<img src="./images/logo.png" className="pic4" alt="#" />
-						<img src="./images/logo.png" className="pic4" alt="#" />
-						<img src="./images/logo.png" className="pic4" alt="#" />
-						<img src="./images/logo.png" className="pic4" alt="#" />
-						<img src="./images/logo.png" className="pic4" alt="#" />
-						<img src="./images/logo.png" className="pic4" alt="#" />
-						<img src="./images/logo.png" className="pic4" alt="#" />
-						<img src="./images/logo.png" className="pic4" alt="#" />
-						<img src="./images/logo.png" className="pic4" alt="#" />
-						<img src="./images/logo.png" className="pic4" alt="#" />
-						<img src="./images/logo.png" className="pic4" alt="#" />
-						<img src="./images/logo.png" className="pic4" alt="#" />
-						<img src="./images/logo.png" className="pic4" alt="#" />
-					</marquee>
-				</div>
-			</div>
+			
 			<div className="container-fluid">
 				<div className="row mt-3">
 					<div className="col-md-7">

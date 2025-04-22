@@ -68,25 +68,7 @@ const Product=()=>{
         <>
         <Header citem={citem} />
 
-		<div className="container-fluid">
-			<marquee behavior="scroll" direction="up" scrollamount="3" className="marquee1 text-center blink">
-
-			<img src="./images/logo.png" className="pic4" alt="#"/>
-			<img src="./images/logo.png" className="pic4" alt="#"/>
-			<img src="./images/logo.png" className="pic4" alt="#"/>
-			<img src="./images/logo.png" className="pic4" alt="#"/>
-			<img src="./images/logo.png" className="pic4" alt="#"/>
-			<img src="./images/logo.png" className="pic4" alt="#"/>
-			<img src="./images/logo.png" className="pic4" alt="#"/>
-			<img src="./images/logo.png" className="pic4" alt="#"/>
-			<img src="./images/logo.png" className="pic4" alt="#"/>
-			<img src="./images/logo.png" className="pic4" alt="#"/>
-			<img src="./images/logo.png" className="pic4" alt="#"/>
-			<img src="./images/logo.png" className="pic4" alt="#"/>
-			<img src="./images/logo.png" className="pic4" alt="#"/>
-			<img src="./images/logo.png" className="pic4" alt="#"/>
-			</marquee>
-		</div>
+		
 
         <div className="container-fluid">
 
