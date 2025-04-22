@@ -9,8 +9,8 @@ const Sidemenu = () => {
 			<div id="accordion">
 				<div className="card">
 					<div className="card-header">
-						<a className="btn" data-bs-toggle="collapse" href="#m1">
-							Marster Entry
+						<a className="btn text-light" data-bs-toggle="collapse" href="#m1">
+							Master Entry
 						</a>
 					</div>
 					<div id="m1" className="collapse show" data-bs-parent="#accordion">
@@ -24,7 +24,7 @@ const Sidemenu = () => {
 				</div>
 				<div className="card">
 					<div className="card-header">
-						<a className="btn" data-bs-toggle="collapse" href="#m2">
+						<a className="btn text-light" data-bs-toggle="collapse" href="#m2">
 							View Order
 						</a>
 					</div>
