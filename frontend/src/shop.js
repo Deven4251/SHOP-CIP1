@@ -20,23 +20,18 @@ const Header = () => {
 					</div>
 					<nav className="main-nav">
 						<ul>
-							<li><Link to="/"><i className="fas fa-home"></i> Home</Link></li>
-							<li><Link to="/products"><i className="fas fa-shopping-bag"></i> Products</Link></li>
-							<li><Link to="/about"><i className="fas fa-info-circle"></i> About</Link></li>
-							<li><Link to="/contact"><i className="fas fa-envelope"></i> Contact</Link></li>
+							<li><Link to="/"><i className="fa fa-home"></i> Home</Link></li>
+							<li><Link to="/product"><i className="fa fa-shopping-bag"></i> Products</Link></li>
+							<li><Link to="/about"><i className="fa fa-info-circle"></i> About</Link></li>
+							<li><Link to="/contact"><i className="fa fa-envelope"></i> Contact</Link></li>
 						</ul>
 					</nav>
 					<div className="user-actions">
 						<Link to="/cart" className="cart-icon">
-							<i className="fas fa-shopping-cart"></i>
+							<i className="fa fa-shopping-cart"></i>
 							<span className="cart-count">0</span>
 						</Link>
-						<Link to="/wishlist" className="wishlist-icon">
-							<i className="fas fa-heart"></i>
-						</Link>
-						<Link to="/account" className="account-icon">
-							<i className="fas fa-user"></i>
-						</Link>
+
 					</div>
 				</div>
 			</div>

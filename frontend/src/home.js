@@ -4,48 +4,40 @@ import Header, { Footer } from './shop';
 import './home.css';
 
 const CountdownTimer = () => {
-    const [timeLeft, setTimeLeft] = useState({
-        hours: 12,
-        minutes: 34,
-        seconds: 56
-    });
+    const calculateTimeLeft = () => {
+        const now = new Date();
+        const nextNoon = new Date();
+
+        nextNoon.setHours(24, 0, 0, 0); // Set to 12:00:00 PM today
+
+        if (now >= nextNoon) {
+            // If past noon, set it for tomorrow
+            nextNoon.setDate(nextNoon.getDate() + 1);
+        }
+
+        const diff = nextNoon - now;
+
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+
+        return { hours, minutes, seconds };
+    };
+
+    const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
     useEffect(() => {
         const timer = setInterval(() => {
-            setTimeLeft(prevTime => {
-                let { hours, minutes, seconds } = prevTime;
-
-                if (seconds > 0) {
-                    seconds--;
-                } else {
-                    seconds = 59;
-                    if (minutes > 0) {
-                        minutes--;
-                    } else {
-                        minutes = 59;
-                        if (hours > 0) {
-                            hours--;
-                        } else {
-                            // Reset timer when it reaches 0
-                            hours = 12;
-                            minutes = 34;
-                            seconds = 56;
-                        }
-                    }
-                }
-
-                return { hours, minutes, seconds };
-            });
+            setTimeLeft(calculateTimeLeft());
         }, 1000);
-
         return () => clearInterval(timer);
     }, []);
 
     return (
         <div className="timer">
-            <span className="time-segment">{timeLeft.hours.toString().padStart(2, '0')}</span>:
-            <span className="time-segment">{timeLeft.minutes.toString().padStart(2, '0')}</span>:
-            <span className="time-segment">{timeLeft.seconds.toString().padStart(2, '0')}</span>
+            <span className="time-segment">{String(timeLeft.hours).padStart(2, '0')}</span>:
+            <span className="time-segment">{String(timeLeft.minutes).padStart(2, '0')}</span>:
+            <span className="time-segment">{String(timeLeft.seconds).padStart(2, '0')}</span>
         </div>
     );
 };
@@ -54,7 +46,7 @@ const Home = () => {
     // Sample categories data
     const categories = [
         { id: 1, name: 'Electronics', icon: 'fa fa-laptop', image: 'https://images.unsplash.com/photo-1498049794561-7780e7231661?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80' },
-        { id: 2, name: 'Fashion', icon: 'fa fa-tshirt', image: 'https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80' },
+        { id: 2, name: 'Fashion', icon: 'fa fa-male', image: 'https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80' },
         { id: 3, name: 'Home & Kitchen', icon: 'fa fa-home', image: 'https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2068&q=80' },
         { id: 4, name: 'Beauty', icon: 'fa fa-female', image: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80' },
         { id: 5, name: 'Books', icon: 'fa fa-book', image: 'https://images.unsplash.com/photo-1543002588-bfa74002ed7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80' },
@@ -65,9 +57,9 @@ const Home = () => {
     const products = [
         {
             id: 1,
-            name: 'iPhone 14 Pro',
-            price: 129999,
-            image: 'https://images.unsplash.com/photo-1678652172413-cc0a3a8c0c3c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+            name: 'SAMSUNG S24 ULTRA',
+            price: 120499,
+            image: 'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s24-ultra-5g-sm-s928-0.jpg',
             discount: 20
         },
         {
