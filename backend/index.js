@@ -6,13 +6,14 @@ const catmodel = require('./model/categorymodel');
 const loginmodel = require('./model/adminmodel');
 const usermodel = require('./model/usermodel');
 const cartmodel = require('./model/cartmodel');
-
 const bcrypt = require('bcryptjs');
 const multer = require('multer');
 const productmodel = require('./model/productmodel');
 const productordermodel = require('./model/productordermodel');
 const orderdetailsmodel = require('./model/orderdetails');
 const con = mongoose.connect("mongodb+srv://devendramishra778585:4ZHiLFT7NZE70Bfo@cluster0.th9bqqi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
+
+
 con.then(() => {
 	console.log("Connection Done");
 })
