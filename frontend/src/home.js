@@ -111,7 +111,7 @@ const Home = () => {
                             <div className="col-md-9">
                                 <div className="hero-slider">
                                     <div className="hero-content">
-                                        <h1>Summer Sale 2023</h1>
+                                        <h1 className="mb-3 flow-text">Sale 2025</h1>
                                         <p>Up to 70% off on all products</p>
                                         <button className="btn btn-primary">Shop Now</button>
                                     </div>

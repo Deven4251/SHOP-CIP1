@@ -493,3 +493,27 @@ body {
         gap: 0.5rem;
     }
 }
+
+
+@keyframes colorFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.flow-text {
+  font-weight: bold;
+  background: linear-gradient(
+    270deg,
+    #ff4e50,
+    #f9d423,
+    #1fa2ff,
+    #12d8fa,
+    #a6ffcb
+  );
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: colorFlow 2s linear infinite;
+}
+

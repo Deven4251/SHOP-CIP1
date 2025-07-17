@@ -369,3 +369,29 @@
         margin-bottom: 1rem;
     }
 }
+
+.sale{
+    font-size: 35px;
+    color: red;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+}
+.sale1{
+    color: green;
+    font-family: algerian;
+    font-size: 40px;
+    background-color: black;
+}
+
+@keyframes flashText {
+  0% { color: red; }
+  25% { color: orange; }
+  50% { color: yellow; }
+  75% { color: lime; }
+  100% { color: red; }
+}
+
+.flash-text {
+  animation: flashText 0.6s linear infinite;
+}
