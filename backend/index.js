@@ -107,8 +107,7 @@ app.post("/login", async (req, res) => {
 	const uname = req.body.uname.trim();
 	const psw = req.body.psw.trim();
 	const data = await loginmodel.findOne({ Username: uname })
-	console.log(data);
-	console.log(uname);
+	
 	if (data) {
 		if (psw === data.Password){
 			res.cookie("cookiesdata", uname).json({ msg: "Valid Users" });
