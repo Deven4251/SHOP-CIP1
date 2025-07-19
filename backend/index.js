@@ -12,8 +12,6 @@ const productmodel = require('./model/productmodel');
 const productordermodel = require('./model/productordermodel');
 const orderdetailsmodel = require('./model/orderdetails');
 const con = mongoose.connect("mongodb+srv://devendramishra778585:4ZHiLFT7NZE70Bfo@cluster0.th9bqqi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
-
-
 con.then(() => {
 	console.log("Connection Done");
 })
@@ -109,9 +107,12 @@ app.post("/login", async (req, res) => {
 	const uname = req.body.uname.trim();
 	const psw = req.body.psw.trim();
 	const data = await loginmodel.findOne({ Username: uname })
+	console.log(data);
+	console.log(uname);
 	if (data) {
-		if (psw === data.password) {
+		if (psw === data.Password){
 			res.cookie("cookiesdata", uname).json({ msg: "Valid Users" });
+
 		}
 		else {
 			res.json({ msg: "Invalid Login" });
