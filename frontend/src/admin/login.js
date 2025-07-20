@@ -1,6 +1,8 @@
+/* eslint-disable no-unused-vars */
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 import "../style.css"
+
 
 const Login=()=>{
     const [frm,setfrm]=useState({"txtuname":"","txtpsw":""});
