@@ -3,7 +3,6 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 import "../style.css"
 
-
 const Login=()=>{
     const [frm,setfrm]=useState({"txtuname":"","txtpsw":""});
     const jmp=useNavigate();
@@ -22,9 +21,11 @@ const Login=()=>{
         if(data.msg==="Valid Users")
         {
             jmp("/dashboard");
+
         }
         else{
             alert(data.msg);
+            console.log(data.msg);
         }
     }
     return(
