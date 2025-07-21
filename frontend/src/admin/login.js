@@ -10,7 +10,7 @@ const Login=()=>{
         setfrm({...frm,[e.target.id]:e.target.value})
     }
     const validate=async()=>{
-        const rec=await fetch("https://shop-cip1-5.onrender.com/login",{
+        const rec=await fetch("http://localhost:7000/login",{
             method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify({uname:frm.txtuname,psw:frm.txtpsw}),
@@ -21,7 +21,6 @@ const Login=()=>{
         if(data.msg==="Valid Users")
         {
             jmp("/dashboard");
-
         }
         else{
             alert(data.msg);
