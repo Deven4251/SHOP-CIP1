@@ -21,7 +21,11 @@ con.catch(() => {
 })
 const app = express();
 app.use(express.static("uploades"))
-app.use(cors({ "origin": true, "credentials": true }));
+app.use(cors({
+	origin: "https://shop-cip.vercel.app", // your Vercel frontend URL
+	// origin:"http://localhost:3000",
+	credentials: true
+}));
 app.use(express.json());
 app.use(cookieParser());
 app.post("/category", async (req, res) => {
@@ -107,14 +111,14 @@ app.post("/login", async (req, res) => {
 	const uname = req.body.uname.trim();
 	const psw = req.body.psw.trim();
 	const data = await loginmodel.findOne({ Username: uname })
-	
 	if (data) {
-		if (psw === data.Password){
+		if (psw === data.Password) {
 			res.cookie("cookiesdata", uname).json({ msg: "Valid Users" });
 
 		}
 		else {
 			res.json({ msg: "Invalid Login" });
+
 		}
 	}
 	else {
@@ -242,7 +246,7 @@ app.post("/cart", async (req, res) => {
 })
 
 app.get("/cart", async (req, res) => {
-	const rec = await cartmodel.find({ email: req.cookies.usercookie});
+	const rec = await cartmodel.find({ email: req.cookies.usercookie });
 	res.json(rec);
 });
 
